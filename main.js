@@ -67,6 +67,7 @@ handlers.isNewUser = function (args, context) {
             isNewUser: args.result
         }
     });
+    log.info("Updated User");
 };
 
 handlers.createNewRuler = function (args, context) {

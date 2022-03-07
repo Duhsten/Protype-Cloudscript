@@ -85,7 +85,7 @@ handlers.createNewRuler = function (args, context) {
         }
     });
 
-    return { messageValue: "User Created" };
+    log.info("Success");
     
 
 };

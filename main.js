@@ -60,15 +60,13 @@ handlers.helloWorld = function (args, context) {
 };
 
 handlers.isNewUser = function (args, context) {
-    var inputValue = null;
-    if (args && args.result)
-        inputValue = args.result;
-    const object = {
-        isNewUser: inputValue
-      };
-    log.info("Updated isNewUser")
-    var request = {Data: {isNewUser: 0}};
-    var playerStatResult = server.UpdateUserData(request);
+
+    var updateUserDataResult = server.UpdateUserData({
+        PlayFabId: currentPlayerId,
+        Data: {
+            isNewUser: args.result
+        }
+    });
 };
 
 // This is a simple example of making a PlayFab server API call

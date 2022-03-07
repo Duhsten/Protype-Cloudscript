@@ -72,14 +72,14 @@ handlers.isNewUser = function (args, context) {
 handlers.createNewRuler = function (args, context) {
 
     var createRuler = server.GrantCharacterToUser({
-        ItemId: 'ruler',
+        CharacterType: "ruler",
         CharacterName: args.characterName
     });
     log.info(createRuler);
     var updateUserDataResult = server.UpdateUserData({
         PlayFabId: currentPlayerId,
         Data: {
-            isNewUser: "1"
+            isNewUser: "0"
         }
     });
     

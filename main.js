@@ -79,7 +79,7 @@ handlers.createNewRuler = function (args, context) {
     var updateUserDataResult = server.UpdateUserData({
         PlayFabId: currentPlayerId,
         Data: {
-            isNewUser: args.result
+            isNewUser: "1"
         }
     });
     

@@ -67,7 +67,7 @@ handlers.isNewUser = function (args, context) {
         isNewUser: inputValue
       };
     log.info("Updated isNewUser")
-    var request = {Data: {isNewUser: inputValue}};
+    var request = {Data: {isNewUser: 0}};
     var playerStatResult = server.UpdateUserData(request);
 };
 

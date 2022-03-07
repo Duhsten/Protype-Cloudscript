@@ -78,6 +78,21 @@ handlers.createNewRuler = function (args, context) {
         PlayFabId: currentPlayerId
     });
     log.info(createRuler);
+  
+
+    log.info("Success");
+    
+
+};
+
+handlers.createNewFaction = function (args, context) {
+
+    var createRuler = server.GrantCharacterToUser({
+        CharacterType: "faction",
+        CharacterName: args.factionName,
+        PlayFabId: currentPlayerId
+    });
+    log.info(createRuler);
     var updateUserDataResult = server.UpdateUserData({
         PlayFabId: currentPlayerId,
         Data: {

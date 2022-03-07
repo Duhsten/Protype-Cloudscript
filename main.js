@@ -69,6 +69,23 @@ handlers.isNewUser = function (args, context) {
     });
 };
 
+handlers.createNewRuler = function (args, context) {
+
+    var createRuler = server.GrantCharacterToUser({
+        ItemId: 'ruler',
+        CharacterName: args.characterName
+    });
+    log.info(createRuler);
+    var updateUserDataResult = server.UpdateUserData({
+        PlayFabId: currentPlayerId,
+        Data: {
+            isNewUser: args.result
+        }
+    });
+    
+
+};
+
 // This is a simple example of making a PlayFab server API call
 handlers.makeAPICall = function (args, context) {
     var request = {

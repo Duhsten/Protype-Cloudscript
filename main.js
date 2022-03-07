@@ -73,7 +73,8 @@ handlers.createNewRuler = function (args, context) {
 
     var createRuler = server.GrantCharacterToUser({
         CharacterType: "ruler",
-        CharacterName: args.characterName
+        CharacterName: args.characterName,
+        PlayFabId: currentPlayerId
     });
     log.info(createRuler);
     var updateUserDataResult = server.UpdateUserData({

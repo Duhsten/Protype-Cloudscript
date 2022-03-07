@@ -61,8 +61,8 @@ handlers.helloWorld = function (args, context) {
 
 handlers.isNewUser = function (args, context) {
     var inputValue = null;
-    if (args && args.inputValue)
-        inputValue = args.inputValue;
+    if (args && args.result)
+        inputValue = args.result;
     const object = {
         isNewUser: inputValue
       };

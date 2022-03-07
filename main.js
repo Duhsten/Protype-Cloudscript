@@ -1,4 +1,4 @@
-//  revision 1.1
+//  revision 5
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Welcome to your first Cloud Script revision!
@@ -67,7 +67,7 @@ handlers.isNewUser = function (args, context) {
         isNewUser: inputValue
       };
     log.info("Updated isNewUser")
-    var request = {Data: object};
+    var request = {Data: {isNewUser: inputValue}};
     var playerStatResult = server.UpdateUserData(request);
 };
 

@@ -110,7 +110,6 @@ handlers.getPlayerFaction = function (args, context) {
     var factions = server.GetAllUsersCharacters({
         PlayFabId: args.playfabID
     });
-    log.info(factions.Characters);
     var factionFound = false;
     var faction;
     for(var i = 0; i < factions.Characters.length; i++) {
@@ -128,6 +127,34 @@ handlers.getPlayerFaction = function (args, context) {
     else
     {
         return {error: "No Faction"}
+    }
+    
+    
+
+};
+
+handlers.getPlayerCharacter = function (args, context) {
+
+    var charResult = server.GetAllUsersCharacters({
+        PlayFabId: args.playfabID
+    });
+    var charFound = false;
+    var char;
+    for(var i = 0; i < charResult.Characters.length; i++) {
+        if(charResult.Characters[i].CharacterType == "ruler")
+        {
+            log.info("Ruler Found");
+            charFound = true;
+            char = charResult.Characters[i];
+        }
+    }
+    if(charFound)
+    {
+        return {faction: faction}
+    }
+    else
+    {
+        return {error: "No Ruler"}
     }
     
     

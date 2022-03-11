@@ -112,7 +112,7 @@ handlers.getPlayerFaction = function (args, context) {
     });
     log.info(factions);
     return {
-        data: factions,
+        data: factions
     };
     
 
@@ -121,7 +121,7 @@ handlers.getPlayerFaction = function (args, context) {
 handlers.makeAPICall = function (args, context) {
     var request = {
         PlayFabId: currentPlayerId, Statistics: [{
-                StatisticName: "Level",data
+                StatisticName: "Level",
                 Value: 2
             }]
     };

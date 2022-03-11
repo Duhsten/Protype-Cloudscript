@@ -111,7 +111,7 @@ handlers.getPlayerFaction = function (args, context) {
         PlayFabId: args.playfabID
     });
     log.info(factions);
-    for (const char in factions) {
+    for (var char in factions) {
        
             return {data : char};
        

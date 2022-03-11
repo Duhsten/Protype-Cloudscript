@@ -110,7 +110,7 @@ handlers.getPlayerFaction = function (args, context) {
     var factions = server.GetAllUsersCharacters({
         PlayFabId: args.playfabID
     });
-    for (var char in factions["Characters"]) {
+    for (var char in factions) {
        
         log.info(char);
        

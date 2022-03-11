@@ -117,7 +117,7 @@ handlers.getPlayerFaction = function (args, context) {
             return {data : char};
         }
 
-    });
+    }
     
 
 };

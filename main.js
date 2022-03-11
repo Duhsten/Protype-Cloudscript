@@ -111,7 +111,7 @@ handlers.getPlayerFaction = function (args, context) {
         PlayFabId: args.playfabID
     });
     log.info(factions);
-    factions.forEach(char => {
+    for (const char in factions) {
         if(char["CharacterType"] == "faction")
         {
             return {data : char};

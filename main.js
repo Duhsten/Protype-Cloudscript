@@ -112,10 +112,9 @@ handlers.getPlayerFaction = function (args, context) {
     });
     log.info(factions);
     for (const char in factions) {
-        if(char["CharacterType"] == "faction")
-        {
+       
             return {data : char};
-        }
+       
 
     }
     

@@ -113,7 +113,7 @@ handlers.getPlayerFaction = function (args, context) {
     log.info(factions.Characters);
     for (var char in factions.Characters) {
        
-        log.info(factions/factions.Characters[char]);
+        log.info(char.length);
        
 
     }

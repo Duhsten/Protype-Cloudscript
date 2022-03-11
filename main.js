@@ -111,11 +111,23 @@ handlers.getPlayerFaction = function (args, context) {
         PlayFabId: args.playfabID
     });
     log.info(factions.Characters);
+    var factionFound = false;
+    var faction;
     for(var i = 0; i < factions.Characters.length; i++) {
-        if(factions.Characters[i].CharacterType == "ruler")
+        if(factions.Characters[i].CharacterType == "faction")
         {
-            log.info(factions.Characters[i].CharacterName);
+            log.info("Faction Found");
+            factionFound = true;
+            faction = factions.Characters[i];
         }
+    }
+    if(factionFound)
+    {
+        return {faction: faction}
+    }
+    else
+    {
+        return {error: "No Faction"}
     }
     
     

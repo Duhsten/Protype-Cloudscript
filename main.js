@@ -111,12 +111,13 @@ handlers.getPlayerFaction = function (args, context) {
         PlayFabId: args.playfabID
     });
     log.info(factions.Characters);
-    for (var char in factions.Characters) {
-       
-        log.info(char.length);
-       
-
+    for(var i = 0; i < factions.Characters.length; i++) {
+        if(factions.Characters[i].CharacterType == "faction")
+        {
+            log.info(factions.Characters[i].CharacterName);
+        }
     }
+    
     
 
 };

@@ -112,7 +112,7 @@ handlers.getPlayerFaction = function (args, context) {
     });
     log.info(factions.Characters);
     for(var i = 0; i < factions.Characters.length; i++) {
-        if(factions.Characters[i].CharacterType == "faction")
+        if(factions.Characters[i].CharacterType == "ruler")
         {
             log.info(factions.Characters[i].CharacterName);
         }

@@ -133,7 +133,7 @@ handlers.getPlayerFaction = function (args, context) {
 
 };
 
-handlers.getPlayerCharacter = function (args, context) {
+handlers.getPlayerRuler = function (args, context) {
 
     var charResult = server.GetAllUsersCharacters({
         PlayFabId: args.playfabID
@@ -150,7 +150,7 @@ handlers.getPlayerCharacter = function (args, context) {
     }
     if(charFound)
     {
-        return {faction: faction}
+        return {ruler: char}
     }
     else
     {

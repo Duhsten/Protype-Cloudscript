@@ -1,4 +1,4 @@
-//  revision 5
+//  revision 18  3/11/2022 3:24
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Welcome to your first Cloud Script revision!
@@ -105,6 +105,15 @@ handlers.createNewFaction = function (args, context) {
 
 };
 
+handlers.getPlayerFaction = function (args, context) {
+
+    var factions = server.GetAllUsersCharacters({
+        PlayFabId: args.playfabID
+    });
+    log.info(factions);
+    
+
+};
 // This is a simple example of making a PlayFab server API call
 handlers.makeAPICall = function (args, context) {
     var request = {

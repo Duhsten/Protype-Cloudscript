@@ -105,6 +105,25 @@ handlers.createNewFaction = function (args, context) {
 
 };
 
+handlers.getFactionByID = function (args, context) {
+
+    var factions = server.GetCharacterData({
+        CharacterId: args.CharacterId
+    });
+    var factionFound = false;
+    var faction;
+    if(faction.length > 0){
+        return {data: factions}
+    }
+    else
+    {
+        return {error: "No Faction with that ID"}
+    }
+    
+    
+
+};
+
 handlers.getPlayerFaction = function (args, context) {
 
     var factions = server.GetAllUsersCharacters({

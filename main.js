@@ -142,10 +142,9 @@ handlers.getPlayerFaction = function (args, context) {
                 PlayFabId: args.playfabID,
                 CharacterId: factions.Characters[i].CharacterId
             });
-            if(factionData.length > 0)
-            {
+            
                 fData = factionData;
-            }
+            
         }
     }
     if(factionFound)

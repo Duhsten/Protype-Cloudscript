@@ -139,7 +139,8 @@ handlers.getPlayerFaction = function (args, context) {
             factionFound = true;
             faction = factions.Characters[i];
             var factionData = server.GetCharacterData({
-                CharacterId: args.playfabID
+                PlayFabId: args.playfabID,
+                CharacterId: factions.Characters[i].CharacterId
             });
             if(factionData.length > 0)
             {

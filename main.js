@@ -131,17 +131,25 @@ handlers.getPlayerFaction = function (args, context) {
     });
     var factionFound = false;
     var faction;
+    var fData;
     for(var i = 0; i < factions.Characters.length; i++) {
         if(factions.Characters[i].CharacterType == "faction")
         {
             log.info("Faction Found");
             factionFound = true;
             faction = factions.Characters[i];
+            var factionData = server.GetCharacterData({
+                CharacterId: args.playfabID
+            });
+            if(factionData.length > 0)
+            {
+                fData = factionData;
+            }
         }
     }
     if(factionFound)
     {
-        return {faction: faction}
+        return {faction: faction, factionData: fData}
     }
     else
     {
